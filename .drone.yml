@@ -165,7 +165,8 @@ steps:
 - name: strip debug information
   image: docker.claudiomattera.it/claudiomattera/wasm:1
   commands:
-  - wasm-gc target/wasm32-unknown-unknown/release/game_of_life.wasm garbage_collected.wasm
+  - wasm-snip --snip-rust-panicking-code ----snip-rust-fmt-code --output snipped.wasm target/wasm32-unknown-unknown/release/game_of_life.wasm
+  - wasm-gc snipped.wasm garbage_collected.wasm
   - wasm-opt -Oz -o optimized.wasm garbage_collected.wasm
 
 - name: bundle into cartridge
