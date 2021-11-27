@@ -1,6 +1,6 @@
 [package]
 name = "game-of-life"
-version = "0.3.0-dev"
+version = "0.3.0"
 authors = ["Claudio Mattera <dev@claudiomattera.it>"]
 edition = "2018"
 description = "The classical Conway's game of life cellular automation"
